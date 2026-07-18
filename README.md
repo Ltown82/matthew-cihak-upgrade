@@ -6,6 +6,20 @@ Premium static website concept demo for **Matthew Cihak, LMHC, NCC** (Sioux City
 
 **https://ltown82.github.io/matthew-cihak-upgrade/**
 
+### Enable GitHub Pages (one-time, if the URL 404s)
+
+GitHub MCP has no Pages API endpoint, so enable hosting in the repo UI:
+
+1. Open **Settings → Pages** on this repository:  
+   https://github.com/Ltown82/matthew-cihak-upgrade/settings/pages
+2. Under **Build and deployment**:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main`
+   - **Folder:** `/ (root)`
+3. Click **Save**. The site is usually live within 1–2 minutes.
+
+Alternatively, set **Source** to **GitHub Actions** so `.github/workflows/pages.yml` deploys on every push to `main`.
+
 ## What's included
 
 - Brand-forward hero and trust messaging
@@ -17,15 +31,16 @@ Premium static website concept demo for **Matthew Cihak, LMHC, NCC** (Sioux City
 - Demo consult request form (client-side only)
 - Mobile menu + form success handling (`script.js`)
 
-## Files
+## Files on `main`
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Full marketing page |
-| `styles.css` | Design system and layout |
-| `styles-a.css` / `styles-b.css` | Split CSS (also loaded by deploy HTML) |
+| `index.html` | Full marketing page (links `styles.css` + `script.js`) |
+| `styles.css` | Full design system |
+| `styles-a.css` / `styles-b.css` | Split CSS copies (same design) |
 | `script.js` | Mobile nav + form demo |
-| `.nojekyll` | Disable Jekyll processing on Pages |
+| `.nojekyll` | Disable Jekyll on Pages |
+| `.github/workflows/pages.yml` | Optional Actions-based Pages deploy |
 
 ## Local preview
 
